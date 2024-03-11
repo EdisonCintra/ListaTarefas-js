@@ -11,11 +11,10 @@ function main() {
 
     const criarItem = (tarefa, status, indice) => {
         const item = document.createElement('label');
-        item.style.maxWidth = '400px';
-        item.className="border-2  border border-dark d-flex gap-4 p-2 ";
+        item.className="border-2 border border-dark d-flex align-items-center gap-4 p-2 ";
         item.innerHTML = `
         <input class="form-check-input p-3 mb-1" type="checkbox" ${status} data-indice=${indice}>
-        <div>${tarefa}</div>
+        <div class="text-break">${tarefa}</div>
         <button type="button" class="btn-close" data-indice=${indice} aria-label="Close"></button>
     `;
 
