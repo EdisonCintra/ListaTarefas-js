@@ -2,8 +2,9 @@ window.addEventListener("DOMContentLoaded", main);
 
 function main() {
 }
+
 function addTarefa(lista, inputValorTarefa) {
-    const valorInput = inputValorTarefa.value.trim();
+    const valorInput = inputValorTarefa.value;
     const divValidation = lista.querySelector('.invalid-feedback');
 
     if (valorInput) {
@@ -33,6 +34,19 @@ function addTarefa(lista, inputValorTarefa) {
         if (divValidation) {
             divValidation.remove();
         }
+
+
+
+        let values = JSON.parse(localStorage.getItem(localStorageKey) || "[]" )
+        values.push({
+            name : valorInput
+        })
+        localStorage.setItem(localStorageKey,JSON.stringify(values))
+
+
+
+
+
 
     } else {
         if (!divValidation) {
@@ -106,3 +120,6 @@ function deletarTodasListas(){
         listas.removeChild(listas.firstChild);
     }
 }
+
+const localStorageKey = 'to-do-list'
+
