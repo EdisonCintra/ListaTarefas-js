@@ -12,7 +12,7 @@ function addLista() {
 
             const taskName = document.createElement("p");
             taskName.innerHTML = listaNome;
-            taskName.className = "text-center fs-3";
+            taskName.className = "text-center fs-3 text-break";
 
             const containerButtons = document.createElement("div");
             const btnAdd = document.createElement("button");
@@ -64,7 +64,7 @@ function addTarefa(div, inputValorTarefa, listaNome) {
 
     if (valorInput) {
         if (isTaskNameUnique(listaNome, valorInput)) {
-            const labelTarefa = document.createElement("label");
+            const labelTarefa = document.createElement("div");
             const input = document.createElement("input");
             const p = document.createElement("p");
             const buttonDel = document.createElement("button");
@@ -73,8 +73,16 @@ function addTarefa(div, inputValorTarefa, listaNome) {
             labelTarefa.className = "border-2 border border-dark d-flex flex-row justify-content-center justify-content-evenly align-items-center p-2 ";
             input.className = "form-check-input p-3";
             input.setAttribute("type", "checkbox");
-            p.className = "text-break fs-1 mt-2";
+            p.className = "text-break fs-1 mt-2 text-break";
             p.innerHTML = valorInput;
+
+            input.addEventListener('change', function() {
+                if (this.checked) {
+                    p.style.textDecoration = "line-through";
+                } else {
+                    p.style.textDecoration = "none";
+                }
+            });
 
             buttonDel.onclick = () => {
                 labelTarefa.remove();
@@ -113,6 +121,7 @@ function addTarefa(div, inputValorTarefa, listaNome) {
     }
 }
 
+
 function saveListToLocalStorage(listaNome) {
     let lists = JSON.parse(localStorage.getItem('lists') || '[]');
     lists.push(listaNome);
@@ -140,7 +149,7 @@ function exibirTudoSalvoNaTela() {
 
         const taskName = document.createElement("p");
         taskName.innerHTML = listaNome;
-        taskName.className = "text-center fs-3";
+        taskName.className = "text-center fs-3 text-break";
 
         const inputValorTarefa = document.createElement("input");
         inputValorTarefa.className = "form-control";
@@ -152,7 +161,7 @@ function exibirTudoSalvoNaTela() {
         btnAdd.className = "btn btn-primary col-6";
         btnAdd.innerHTML = "Adicionar Tarefa";
         btnAdd.onclick = () => {
-            addTarefa(listaNome);
+            addTarefa(div, inputValorTarefa, listaNome);
         };
 
         const btnDel = document.createElement("button");
@@ -169,7 +178,7 @@ function exibirTudoSalvoNaTela() {
         div.appendChild(containerButtons);
 
         tasks.forEach(task => {
-            const labelTarefa = document.createElement("label");
+            const labelTarefa = document.createElement("div");
             const input = document.createElement("input");
             const p = document.createElement("p");
             const buttonDel = document.createElement("button");
@@ -178,8 +187,17 @@ function exibirTudoSalvoNaTela() {
             labelTarefa.className = "border-2 border border-dark d-flex flex-row justify-content-center justify-content-evenly align-items-center p-2 ";
             input.className = "form-check-input p-3";
             input.setAttribute("type", "checkbox");
-            p.className = "text-break fs-1 mt-2";
+            p.className = "text-break fs-1 mt-2 text-break";
             p.innerHTML = task.name;
+
+            input.addEventListener('change', function() {
+                // Verifica se o checkbox está marcado
+                if (this.checked) {
+                    p.style.textDecoration = "line-through";
+                } else {
+                    p.style.textDecoration = "none";
+                }
+            });
 
             buttonDel.onclick = () => {
                 labelTarefa.remove();
