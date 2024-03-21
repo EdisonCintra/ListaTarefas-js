@@ -73,8 +73,8 @@ function addTarefa(div, inputValorTarefa, listaNome) {
             const buttonDel = document.createElement("button");
             const divTESTE = document.createElement("div")
 
-            buttonDel.className = "btn-close bg-danger text-light";
-            labelTarefa.className = "bg-dark mt-3 rounded-4 border-2 border border-dark d-flex justify-content-around flex-row justify-content-center  align-items-center p-2 ";
+            buttonDel.className = "btn-close bg-danger text-light p-2 mt-1";
+            labelTarefa.className = "bg-dark mt-3 gap-5 rounded-4 border-2 border border-dark d-flex justify-content-around flex-row justify-content-center  align-items-center p-2 ";
             input.className = "form-check-input p-3";
             input.setAttribute("type", "checkbox");
             p.className = "text-break text-light fs-1 mt-2 text-break";
@@ -191,7 +191,7 @@ function exibirTudoSalvoNaTela() {
             const buttonDel = document.createElement("button");
             const  divTESTE = document.createElement("div")
 
-            buttonDel.className = "btn-close bg-danger text-light";
+            buttonDel.className = "btn-close bg-danger text-light p-2 mt-1";
             labelTarefa.className = "bg-dark mt-3 rounded-4 gap-5 border-2 border border-dark d-flex justify-content-around flex-row justify-content-center  align-items-center p-2 ";
             input.className = "form-check-input p-3";
             input.setAttribute("type", "checkbox");
