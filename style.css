@@ -1,3 +1,9 @@
+:root{
+    --bg--principal: #202428;
+    --bg--lista: #2d2e37;
+}
+
+
 .border > input[type='checkbox']:checked  + div {
     text-decoration:line-through;
 }

@@ -16,18 +16,18 @@
 
 
 </head>
-<body class="">
+<body style="background-color: var(--bg--principal)">
 
-<div class="container mt-3 w-75 p-4 text-center fw-bolder fs-1 d-flex justify-content-center align-items-center
-        border-dark border-1 flex-column border border-2 " id="newItem">
-    <p>Adicione sua Lista de Tarefas</p>
+<div class="container mt-3 w-75 p-4 text-center fw-bolder fs-3 d-flex justify-content-center align-items-center
+        border-dark border-1 flex-column border border-2 rounded-4 " style="background-color: var(--bg--lista)" id="newItem">
+    <p class="text-light">Adicione sua Lista de Tarefas</p>
     <input type="text" class="form-control" id="valorLista" aria-label="First name" placeholder="Nome da Lista">
     <div class="invalid-feedback" id="nomeListaValidationMessage">
         Adicione um nome para a lista!
     </div>
     <div class="d-flex flex-row d-grid gap-3">
-        <button class="btn btn-success mt-3 " onclick="addLista()">Adicionar Lista</button>
-        <button class="btn btn-danger mt-3 " onclick="removeAllListsFromLocalStorage()">Deletar Listas</button>
+        <button class="btn btn-success mt-3 fw-bold" onclick="addLista()">Adicionar Lista</button>
+        <button class="btn btn-danger mt-3 fw-bold" onclick="removeAllListsFromLocalStorage()">Deletar Listas</button>
     </div>
 </div>
 
