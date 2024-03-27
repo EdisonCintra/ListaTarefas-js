@@ -119,7 +119,7 @@ function addTarefa(div, inputValorTarefa, listaNome) {
     } else {
         if (!divValidation) {
             const divValidation = document.createElement("div");
-            divValidation.innerText = "Por favor, insira um valor para a tarefa.";
+            divValidation.innerText = "Por favor, insira um nome para a tarefa.";
             divValidation.style.display = "block";
             divValidation.className = "invalid-feedback text-center";
             div.append(divValidation);
